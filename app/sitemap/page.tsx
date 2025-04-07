@@ -78,6 +78,11 @@ export default function SitemapPage() {
                 </Link>
               </li>
               <li>
+                <Link href="/cancellation-refund-policy" className="text-primary hover:underline">
+                  Cancellation & Refund Policy
+                </Link>
+              </li>
+              <li>
                 <Link href="/sitemap" className="text-primary hover:underline">
                   Sitemap
                 </Link>

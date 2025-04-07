@@ -2,15 +2,14 @@
 
 import type React from "react"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
+import Link from "next/link"
 import Image from "next/image"
-import { Youtube, Instagram, Linkedin, ArrowUp, X } from "lucide-react"
+import { Youtube, Instagram, Linkedin, ArrowUp } from "lucide-react"
 import logo from "@/public/QG_black.png"
 
 export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false)
-  const [showRefundModal, setShowRefundModal] = useState(false)
-  const modalRef = useRef<HTMLDivElement>(null)
 
   // Show scroll-to-top button when scrolled down
   useEffect(() => {
@@ -20,37 +19,6 @@ export default function Footer() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  // Handle modal interactions
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-        setShowRefundModal(false)
-      }
-    }
-
-    // Handle escape key to close modal
-    const handleEscKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setShowRefundModal(false)
-      }
-    }
-
-    if (showRefundModal) {
-      document.addEventListener("mousedown", handleClickOutside)
-      document.addEventListener("keydown", handleEscKey)
-      // Prevent scrolling when modal is open
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-      document.removeEventListener("keydown", handleEscKey)
-      document.body.style.overflow = ""
-    }
-  }, [showRefundModal])
 
   // Handle navigation like the header does
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -247,33 +215,21 @@ export default function Footer() {
             Limited
           </p>
           <div className="mt-4 sm:mt-0 flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2">
-            <a
-              href="/#privacy"
-              onClick={(e) => handleLinkClick(e, "/#privacy")}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
-            >
+            <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a
-              href="/#terms"
-              onClick={(e) => handleLinkClick(e, "/#terms")}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
-            >
+            </Link>
+            <Link href="/terms-conditions" className="text-sm text-gray-400 hover:text-white transition-colors">
               Terms & Conditions
-            </a>
-            <button
-              onClick={() => setShowRefundModal(true)}
+            </Link>
+            <Link
+              href="/cancellation-refund-policy"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               Cancellation & Refund Policy
-            </button>
-            <a
-              href="/#sitemap"
-              onClick={(e) => handleLinkClick(e, "/#sitemap")}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
-            >
+            </Link>
+            <Link href="/sitemap" className="text-sm text-gray-400 hover:text-white transition-colors">
               Sitemap
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -288,88 +244,6 @@ export default function Footer() {
       >
         <ArrowUp className="h-5 w-5" />
       </button>
-
-      {/* Refund Policy Modal */}
-      {showRefundModal && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 animate-fade-in">
-          <div
-            ref={modalRef}
-            className="bg-white text-gray-900 rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-fade-slide-up"
-          >
-            <div className="sticky top-0 bg-white z-10 flex items-center justify-between p-6 border-b">
-              <h2 className="text-2xl font-bold text-secondary">Cancellation & Refund Policy – Quickgick</h2>
-              <button
-                onClick={() => setShowRefundModal(false)}
-                className="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-1"
-                aria-label="Close modal"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-
-            <div className="p-6">
-              <p className="text-gray-700 mb-6">
-                This Cancellation & Refund Policy outlines how hotel partners and clients can cancel or request a refund
-                for products or services purchased through Quickgick.
-              </p>
-
-              <h3 className="text-xl font-semibold text-secondary mb-3">Cancellations & Refunds</h3>
-              <ul className="list-disc pl-5 mb-6 space-y-2 text-gray-700">
-                <li>
-                  Refunds will only be entertained if the request is raised within 24 hours of purchase or activation.
-                </li>
-                <li>
-                  After the 24-hour window, no refunds will be processed, except under special circumstances at the sole
-                  discretion of the Quickgick team.
-                </li>
-              </ul>
-
-              <p className="text-gray-700 mb-3">Special refund considerations may be reviewed in cases such as:</p>
-              <ul className="list-disc pl-5 mb-6 space-y-2 text-gray-700">
-                <li>Duplicate payments or billing errors.</li>
-                <li>Failure of service due to a proven technical issue from Quickgick's end.</li>
-                <li>A clearly demonstrated failure to deliver what was promised during onboarding or setup.</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-secondary mb-3">Non-Refundable Cases</h3>
-              <p className="text-gray-700 mb-3">Refunds will not be issued under the following conditions:</p>
-              <ul className="list-disc pl-5 mb-6 space-y-2 text-gray-700">
-                <li>Change of mind after the 24-hour window.</li>
-                <li>Misunderstanding of features without prior clarification.</li>
-                <li>
-                  Delay or failure due to hotel-side configuration, internal policies, or third-party integrations not
-                  managed by Quickgick.
-                </li>
-                <li>Services that have already been delivered, customized, or partially/fully used.</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-secondary mb-3">Refund Processing</h3>
-              <ul className="list-disc pl-5 mb-6 space-y-2 text-gray-700">
-                <li>If approved, refunds will be processed within 7 business days to the original payment method.</li>
-                <li>You will receive an email confirmation once the refund has been initiated.</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-secondary mb-3">Need Help?</h3>
-              <p className="text-gray-700">
-                For refund requests or queries, please reach out to our support team at{" "}
-                <a href="mailto:info@quickgick.com" className="text-primary hover:underline">
-                  info@quickgick.com
-                </a>{" "}
-                within 24 hours of your purchase.
-              </p>
-            </div>
-
-            <div className="border-t p-6 flex justify-end">
-              <button
-                onClick={() => setShowRefundModal(false)}
-                className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-md transition-colors"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </footer>
   )
 }
