@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
               </span>
               Introduction
             </h2>
-            <p>
+            <p className="mt-4">
               Quickgick ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how
               we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
               </span>
               Information We Collect
             </h2>
-            <p>We may collect information about you in a variety of ways. The information we may collect includes:</p>
+            <p className="mt-4">We may collect information about you in a variety of ways. The information we may collect includes:</p>
 
             <h3 className="text-xl font-semibold text-secondary mt-6">Personal Data</h3>
             <p>
@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
               </span>
               Use of Your Information
             </h2>
-            <p>
+            <p className="mt-4">
               Having accurate information about you permits us to provide you with a smooth, efficient, and customized
               experience. Specifically, we may use information collected about you via our services to:
             </p>
@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
               </span>
               Disclosure of Your Information
             </h2>
-            <p>
+            <p className="mt-4">
               We may share information we have collected about you in certain situations. Your information may be
               disclosed as follows:
             </p>
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
               </span>
               Security of Your Information
             </h2>
-            <p>
+            <p className="mt-4">
               We use administrative, technical, and physical security measures to help protect your personal
               information. While we have taken reasonable steps to secure the personal information you provide to us,
               please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method
@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
               </span>
               Contact Us
             </h2>
-            <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+            <p className="mt-4">If you have questions or comments about this Privacy Policy, please contact us at:</p>
 
             <div className="bg-tertiary rounded-lg p-6 mt-4">
               <p className="font-semibold text-secondary">Quickgick</p>
