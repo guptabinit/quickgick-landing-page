@@ -189,8 +189,8 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="text-gray-300">
                 <span className="block font-medium text-primary mb-1">Email:</span>
-                <a href="mailto:info@quickgick.com" className="hover:text-white transition-colors">
-                  info@quickgick.com
+                <a href="mailto:quickgick@gmail.com" className="hover:text-white transition-colors">
+                  quickgick@gmail.com
                 </a>
               </li>
               <li className="text-gray-300">
