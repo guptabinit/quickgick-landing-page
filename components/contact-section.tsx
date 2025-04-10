@@ -127,8 +127,8 @@ export default function ContactSection() {
                   <div className="ml-4">
                     <h4 className="text-sm font-medium text-gray-900">Email Us</h4>
                     <p className="mt-1 text-sm text-gray-600">
-                      <a href="mailto:info@quickgick.com" className="text-primary hover:underline">
-                        info@quickgick.com
+                      <a href="mailto:quickgick@gmail.com" className="text-primary hover:underline">
+                        quickgick@gmail.com
                       </a>
                     </p>
                   </div>
