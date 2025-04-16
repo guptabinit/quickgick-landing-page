@@ -2,10 +2,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import BackendTag from "./backend-by"
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-tertiary py-20 sm:py-24">
+    <section className="relative overflow-hidden bg-tertiary py-14">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-cover bg-center opacity-10" />
       </div>
@@ -29,7 +30,7 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-
+              <br/>
               <Button variant="outline" size="lg" className="text-base px-8 py-6" asChild>
                 <Link href="#products">Explore Solutions</Link>
               </Button>
@@ -50,6 +51,7 @@ export default function HeroSection() {
                   />
                 </a>
               </div>
+              <BackendTag/>
             </div>
           </div>
 
