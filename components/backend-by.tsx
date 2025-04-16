@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function BackendTag() {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4 md:gap-6 rounded-xl md:rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md p-4 border border-gray-200/30 dark:border-gray-700/30 shadow-lg hover:shadow-xl transition-all duration-300 group max-w-full">
+    <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-start gap-4 md:gap-6 rounded-xl md:rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-md p-4 border border-gray-200/30 dark:border-gray-700/30 shadow-lg hover:shadow-xl transition-all duration-300 group max-w-full">
       
       {/* Label */}
       <span className="text-sm md:text-base font-semibold text-primary dark:text-gray-100">
