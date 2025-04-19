@@ -11,16 +11,16 @@ export default function BackendTag() {
 
       {/* Logos */}
       <div className="flex items-center justify-center flex-wrap gap-4 md:gap-8 border-t md:border-t-0 md:border-l pt-4 md:pt-0 md:pl-4 border-gray-300/50 dark:border-gray-700/50">
-      <div className="relative h-10 md:h-14 w-10 md:w-14 transition-transform duration-300 group-hover:scale-110">
+      <div className="relative h-16 md:h-12 w-16 md:w-24 transition-transform duration-300 group-hover:scale-110">
   <Image
     src="/images/microsoft-azure.jpg"
     alt="Microsoft Azure"
     fill
     className="object-contain"
-    sizes="(max-width: 768px) 40px, 56px"
+    sizes="(max-width: 768px) 64px, 96px"
   />
 </div>
-    
+
         <div className="relative h-7 md:h-10 w-24 md:w-40 transition-transform duration-300 group-hover:scale-110">
           <Image
             src="/images/startup-india.png"
